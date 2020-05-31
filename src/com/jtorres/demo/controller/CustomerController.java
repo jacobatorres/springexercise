@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jtorres.DAO.CustomerDAO;
+import com.jtorres.service.CustomerService;
 import com.jtorres.springexercise.entity.Customer;
 
 @Controller
@@ -16,13 +17,13 @@ import com.jtorres.springexercise.entity.Customer;
 public class CustomerController {
 	
 	@Autowired
-	private CustomerDAO customerDAO;
+	private CustomerService customerservice;
 
 	@GetMapping("/list")
 	public String listCustomers(Model theModel) {
 		
 		
-		List<Customer> theCustomers = customerDAO.getCustomers();
+		List<Customer> theCustomers = customerservice.getCustomers();
 		
 		theModel.addAttribute("customers", theCustomers);
 		
