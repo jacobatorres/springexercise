@@ -3,7 +3,9 @@
   
 
 <%@ taglib prefix="form" uri = "http://www.springframework.org/tags/form" %>  
-   
+  
+  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +15,29 @@
 <body>
 
 testing 1234
+
+
+			<!-- button for add customer -->
+			<input type = "button" value = "Add Customer" 
+				onclick="window.location.href='showFormForAdd'; return false"
+				
+			/>
+			
+			<br / >
+			<table>
+				<tr>
+					<th>id</th>
+					<th> Name</th>
+				</tr>
+				
+				<c:forEach var = "tempCustomer" items="${customers}">
+					<tr>
+						<td> ${tempCustomer.id } </td>
+						<td> ${tempCustomer.name } </td>
+					</tr>
+				</c:forEach>
+				
+			</table>
 
 
 </body>
