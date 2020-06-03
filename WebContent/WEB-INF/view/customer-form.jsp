@@ -33,12 +33,12 @@
 		
 		</table>
 		
+	</form:form>	
+
 		<p>
 			<a href = "${pageContext.request.contextPath }/customer/list">Back to list</a>
 		</p>
 	
-	</form:form>	
-
 	
 </body>
 </html>
