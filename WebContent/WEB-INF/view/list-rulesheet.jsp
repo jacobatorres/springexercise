@@ -18,7 +18,7 @@ testing 1234 RULESHEETS!
 
 
 			<!-- button for add customer -->
-			<input type = "button" value = "Add Customer" 
+			<input type = "button" value = "Add Rulesheet" 
 				onclick="window.location.href='showFormForAdd'; return false"
 				
 			/>
@@ -27,13 +27,16 @@ testing 1234 RULESHEETS!
 			<table>
 				<tr>
 					<th>id</th>
-					<th> Name</th>
+					<th>type</th>
+					<th>filecontent</th>
 				</tr>
 				
-				<c:forEach var = "tempCustomer" items="${customers}">
+				<c:forEach var = "var" items="${rulesheet}">
 					<tr>
-						<td> ${tempCustomer.id } </td>
-						<td> ${tempCustomer.name } </td>
+						<td> ${var.id } </td>
+						<td> ${var.type } </td>
+						<td> ${var.filecontent } </td>
+						
 					</tr>
 				</c:forEach>
 				

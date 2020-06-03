@@ -26,6 +26,12 @@ public class Rulesheet {
 	@Column(name="type")
 	private String type;
 	
+
+	@Column(name = "customer_id")
+	private int customerId;
+	
+
+	
 	
 	@Column(name = "filecontent")
 	private String filecontent;
@@ -41,10 +47,21 @@ public class Rulesheet {
 		
 	}
 
+
 	public Rulesheet(String type, String filecontent) {
 		this.type = type;
 		this.filecontent = filecontent;
 	}
+	
+	public int getcustomerId() {
+		return customerId;
+	}
+
+
+	public void setcustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
 
 	public int getId() {
 		return id;
