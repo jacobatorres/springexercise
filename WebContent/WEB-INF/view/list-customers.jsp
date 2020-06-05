@@ -38,7 +38,11 @@ testing 1234
 				</c:forEach>
 				
 			</table>
-
+			
+		<p>
+			<a href = "${pageContext.request.contextPath }/rulesheet/list">Show rulesheet list</a>
+		</p>
+	
 
 </body>
 </html>

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jtorres.service.CustomerService;
+import com.jtorres.springexercise.entity.Customer;
 import com.jtorres.springexercise.entity.Rulesheet;
 
 @Controller
@@ -30,5 +31,17 @@ public class RulesheetController {
 		
 		return "list-rulesheet";
 	}
+	
+	
+	@GetMapping("/showFormAddRulesheet") 
+	public String showFormAddRulesheet(Model theModel) {
+		Rulesheet therulesheet = new Rulesheet();
+		
+		theModel.addAttribute("rulesheet", therulesheet);
+
+
+		return "rulesheet-form";
+	}
+	
 	
 }

@@ -12,15 +12,15 @@
 <body>
 	
 	
-	<form:form action = "saveCustomer" modelAttribute="customer" method="POST">
+	<form:form action = "/" modelAttribute="rulesheet" method="POST">
 		
 		<table>
 			
 			<tbody>
 				<tbody>
 					<tr>
-						<td><label>Name: </label></td>
-						<td><form:input path="name"></form:input></td>
+						<td><label>File type: </label></td>
+						<td><form:input path="type"></form:input></td>
 						
 					</tr>
 					
@@ -36,7 +36,7 @@
 	</form:form>	
 
 		<p>
-			<a href = "${pageContext.request.contextPath }/customer/list">Back to customer list</a>
+			<a href = "${pageContext.request.contextPath }/rulesheet/list">Back to rulesheet list</a>
 		</p>
 	
 	

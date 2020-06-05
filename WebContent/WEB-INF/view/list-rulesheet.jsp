@@ -19,7 +19,7 @@ testing 1234 RULESHEETS!
 
 			<!-- button for add customer -->
 			<input type = "button" value = "Add Rulesheet" 
-				onclick="window.location.href='showFormForAdd'; return false"
+				onclick="window.location.href='showFormAddRulesheet'; return false"
 				
 			/>
 			
@@ -42,6 +42,9 @@ testing 1234 RULESHEETS!
 				
 			</table>
 
+		<p>
+			<a href = "${pageContext.request.contextPath }/customer/list">Back to Customer list</a>
+		</p>
 
 </body>
 </html>
