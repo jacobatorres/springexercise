@@ -39,7 +39,7 @@
 					</tr>
 					
 					<tr>
-						<td><label>String info: </label></td>
+						<td><label>File content: </label></td>
 						<td>
 							<form:input path="filecontent"/>
 							<form:errors path="filecontent" cssClass="error" />
