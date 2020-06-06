@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -23,6 +25,8 @@ public class Rulesheet {
 	private int id;
 	
 	
+	@NotNull
+	@Size(min=1, message="type name not be blank")
 	@Column(name="type")
 	private String type;
 	
@@ -32,7 +36,8 @@ public class Rulesheet {
 	
 
 	
-	
+	@NotNull
+	@Size(min=1, message="file content not be blank")
 	@Column(name = "filecontent")
 	private String filecontent;
 	

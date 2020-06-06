@@ -10,13 +10,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Save Customer</title>
+	<meta charset="ISO-8859-1">
+	<title>Save Customer</title>
+	
+	<style>
+		.error {color: red}
+	</style>	
+
+
+
 </head>
 <body>
 	
 	
-	<form:form action = "/processRulesheet" modelAttribute="rulesheet" method="POST">
+	<form:form action = "processRulesheet" modelAttribute="rulesheet" method="POST">
 		
 		<table>
 			
@@ -24,13 +31,19 @@
 				<tbody>
 					<tr>
 						<td><label>File type: </label></td>
-						<td><form:input path="type"></form:input></td>
+						<td>
+							<form:input path="type" />
+							<form:errors path="type" cssClass="error" />
+						</td>
 						
 					</tr>
 					
 					<tr>
 						<td><label>String info: </label></td>
-						<td><form:input path="filecontent"></form:input></td>
+						<td>
+							<form:input path="filecontent"/>
+							<form:errors path="filecontent" cssClass="error" />
+						</td>
 						
 					</tr>
 										
