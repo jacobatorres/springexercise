@@ -3,6 +3,10 @@
 
 
 <%@ taglib prefix="form" uri = "http://www.springframework.org/tags/form" %>  
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +16,7 @@
 <body>
 	
 	
-	<form:form action = "/" modelAttribute="rulesheet" method="POST">
+	<form:form action = "/processRulesheet" modelAttribute="rulesheet" method="POST">
 		
 		<table>
 			
@@ -24,6 +28,12 @@
 						
 					</tr>
 					
+					<tr>
+						<td><label>String info: </label></td>
+						<td><form:input path="filecontent"></form:input></td>
+						
+					</tr>
+										
 					<tr>
 						<td><label></label></td>
 						<td><input type = "submit" value = "Save"/></td>
