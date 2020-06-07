@@ -24,7 +24,20 @@ public class CustomerController {
 	public String listCustomers(Model theModel) {
 		
 		
+		String val = "ruleA_13";
+		int customer_id_given = Integer.parseInt(val.split("_")[1]);
+		
+		
 		List<Customer> theCustomers = customerservice.getCustomers();
+		
+		for (var i = 0; i < theCustomers.size(); i++) {
+			int id_rightnow = theCustomers.get(i).getId();
+			if (id_rightnow  == customer_id_given) {
+				System.out.println("ye boy");
+			} 
+			
+			System.out.println(id_rightnow);
+		}
 		
 		theModel.addAttribute("customers", theCustomers);
 		

@@ -16,6 +16,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.jtorres.validation.DoesCustomerExist;
+
 @Entity
 @Table(name="rulesheet")
 public class Rulesheet {
@@ -29,6 +31,7 @@ public class Rulesheet {
 	@NotNull
 	@Size(min=1, message="type name not be blank")
 	@Pattern(regexp="^[a-zA-z0-9]+_[0-9]+", message = "must look like ruleA_352")
+	@DoesCustomerExist(message = "customer does not exist")
 	@Column(name="type")
 	private String type;
 	
