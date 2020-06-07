@@ -2,6 +2,8 @@ package com.jtorres.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,6 +41,13 @@ public class CustomerServiceImpl implements CustomerService {
 	@Transactional
 	public List<Rulesheet> getRulesheets() {
 		return rulesheetDAO.getRulesheets();
+	}
+
+	@Override
+	@Transactional
+	public void saveRulesheet(@Valid Rulesheet therulesheet) {
+		rulesheetDAO.saveRulesheet(therulesheet);
+		
 	}
 	
 	

@@ -60,15 +60,33 @@ public class RulesheetController {
 	
 	@PostMapping("/processRulesheet")
 	public String saveRulesheet(@Valid @ModelAttribute("rulesheet") Rulesheet therulesheet, 
-			BindingResult theBindingResult) {
+			BindingResult theBindingResult, Model theModel) {
 		
 		if (theBindingResult.hasErrors()) {
 			return "rulesheet-form";
 		} else {
-			// needed: type, customerID and filecontent
+
+			// from the type info, parse the type and customerID
+			// we are assured that the customerID exists at this point
+			// filecontent is already saved
 			
+			String type_id = therulesheet.getType();
+			String[] split_result = type_id.split("_");
 			
-			// customerservice.saveRulesheet(therulesheet);
+			String type = split_result[0];
+			int customer_id = Integer.parseInt(split_result[1]);
+			
+			System.out.println("the rulesheet model before:");
+			System.out.println(therulesheet.toString());
+			
+			therulesheet.setType(type);
+			therulesheet.setcustomerId(customer_id);
+			
+			System.out.println("the rulesheet model after:");
+			System.out.println(therulesheet.toString());
+
+			customerservice.saveRulesheet(therulesheet);
+		
 			return "redirect:/rulesheet/list";
 			
 		}

@@ -2,6 +2,8 @@ package com.jtorres.DAO;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -38,6 +40,14 @@ public class RulesheetDAOImpl implements RulesheetDAO {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	@Override
+	public void saveRulesheet(@Valid Rulesheet therulesheet) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		currentSession.save(therulesheet);
+		
 	}
 
 }

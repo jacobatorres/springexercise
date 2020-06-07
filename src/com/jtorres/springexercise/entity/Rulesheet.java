@@ -22,16 +22,17 @@ import com.jtorres.validation.DoesCustomerExist;
 @Table(name="rulesheet")
 public class Rulesheet {
 
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
 	
-	@NotNull
+	
 	@Size(min=1, message="type name not be blank")
-	@Pattern(regexp="^[a-zA-z0-9]+_[0-9]+", message = "must look like ruleA_352")
-	@DoesCustomerExist(message = "customer does not exist")
+//	@Pattern(regexp="^[a-zA-z0-9]+_[0-9]+", message = "must look like ruleA_352")
+//	@DoesCustomerExist(message = "customer does not exist")
 	@Column(name="type")
 	private String type;
 	
@@ -41,7 +42,6 @@ public class Rulesheet {
 	
 
 	
-	@NotNull
 	@Size(min=1, message="file content not be blank")
 	@Column(name = "filecontent")
 	private String filecontent;
@@ -107,5 +107,10 @@ public class Rulesheet {
 	
 	
 
+	@Override
+	public String toString() {
+		return "Rulesheet [id=" + id + ", type=" + type + ", customerId=" + customerId + ", filecontent=" + filecontent
+				+ ", createDate=" + createDate + "]";
+	}
 	
 }
