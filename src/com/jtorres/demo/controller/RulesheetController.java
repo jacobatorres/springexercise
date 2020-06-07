@@ -32,8 +32,6 @@ public class RulesheetController {
 		
 		// add to model
 		
-		
-		
 		theModel.addAttribute("rulesheet", rulesheets);
 		
 		return "list-rulesheet";
@@ -50,13 +48,6 @@ public class RulesheetController {
 		return "rulesheet-form";
 	}
 	
-	@PostMapping("/saveCustomer")
-	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
-		
-		customerservice.saveCustomer(theCustomer);
-		return "redirect:/customer/list";
-	}
-
 	
 	@PostMapping("/processRulesheet")
 	public String saveRulesheet(@Valid @ModelAttribute("rulesheet") Rulesheet therulesheet, 
@@ -70,7 +61,7 @@ public class RulesheetController {
 			// we are assured that the customerID exists at this point
 			// filecontent is already saved
 			
-			String type_id = therulesheet.getType();
+			String type_id = therulesheet.getFilename();
 			String[] split_result = type_id.split("_");
 			
 			String type = split_result[0];

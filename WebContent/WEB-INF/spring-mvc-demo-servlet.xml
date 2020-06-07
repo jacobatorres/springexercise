@@ -51,6 +51,7 @@
 		   <props>
 		      <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 		      <prop key="hibernate.show_sql">true</prop>
+		      <prop key="javax.persistence.validation.mode">none</prop> <!-- https://stackoverflow.com/questions/46390044/stackoverflowerror-when-adding-springwebconstraintvalidatorfactory-in-validation -->		      
 		   </props>
 		</property>
    </bean>	  

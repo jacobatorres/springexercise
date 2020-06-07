@@ -32,9 +32,9 @@
 					<tr>
 						<td><label>File type: </label></td>
 						<td>
-							<form:input path="type" />
+							<form:input path="filename" />
 							<br />
-							<form:errors path="type" cssClass="error" />
+							<form:errors path="filename" cssClass="error" />
 							<br />
 						</td>
 						

@@ -32,8 +32,9 @@ public class CustomerExistConstraintValidator
 		if (split_result.length > 1) {
 			int customer_id_given = Integer.parseInt(userInput.split("_")[1]);
 
-
+			System.out.println("so far so good hehe ");
 			List<Customer> theCustomers = customerservice.getCustomers();
+			System.out.println("so far next..");
 			
 			for (var i = 0; i < theCustomers.size(); i++) {
 				int id_rightnow = theCustomers.get(i).getId();

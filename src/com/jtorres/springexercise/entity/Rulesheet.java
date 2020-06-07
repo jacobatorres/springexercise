@@ -10,7 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Transient;
+//import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -31,10 +32,14 @@ public class Rulesheet {
 	
 	
 	@Size(min=1, message="type name not be blank")
-//	@Pattern(regexp="^[a-zA-z0-9]+_[0-9]+", message = "must look like ruleA_352")
-//	@DoesCustomerExist(message = "customer does not exist")
+	@Pattern(regexp="^[a-zA-z0-9]+_[0-9]+", message = "must look like ruleA_352")
+	@DoesCustomerExist(message = "customer does not exist")
+	@Transient
+	private String filename;
+	
 	@Column(name="type")
 	private String type;
+
 	
 
 	@Column(name = "customer_id")
@@ -58,11 +63,6 @@ public class Rulesheet {
 	}
 
 
-	public Rulesheet(String type, String filecontent) {
-		this.type = type;
-		this.filecontent = filecontent;
-	}
-	
 	public int getcustomerId() {
 		return customerId;
 	}
@@ -104,13 +104,34 @@ public class Rulesheet {
 	public void setFilecontent(String filecontent) {
 		this.filecontent = filecontent;
 	}
-	
-	
+
 
 	@Override
 	public String toString() {
-		return "Rulesheet [id=" + id + ", type=" + type + ", customerId=" + customerId + ", filecontent=" + filecontent
-				+ ", createDate=" + createDate + "]";
+		return "Rulesheet [id=" + id + ", filename=" + filename + ", type=" + type + ", customerId=" + customerId
+				+ ", filecontent=" + filecontent + ", createDate=" + createDate + "]";
 	}
+
+
+	public String getFilename() {
+		return filename;
+	}
+
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+	
+	
 	
 }
