@@ -33,7 +33,9 @@
 						<td><label>File type: </label></td>
 						<td>
 							<form:input path="type" />
+							<br />
 							<form:errors path="type" cssClass="error" />
+							<br />
 						</td>
 						
 					</tr>
@@ -42,6 +44,7 @@
 						<td><label>File content: </label></td>
 						<td>
 							<form:input path="filecontent"/>
+							<br />
 							<form:errors path="filecontent" cssClass="error" />
 						</td>
 						
